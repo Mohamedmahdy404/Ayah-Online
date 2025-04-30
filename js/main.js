@@ -28,12 +28,26 @@ let toggleBtn = document.querySelector(".toggle");
 let toggleIcon = document.querySelector(".toggle i");
 let navLinks = document.querySelector(".links-mobile");
 let nav = document.querySelector(".nav");
+let mobileLinks = document.querySelectorAll(".links-mobile li a"); // Select all mobile links
+
 
 toggleBtn.onclick = function() {
     toggleIcon.classList.toggle("fa-bars");
     toggleIcon.classList.toggle("fa-times");
     navLinks.classList.toggle("collapse");
 }
+
+
+
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 800) { // Change 50 to whatever scroll threshold you prefer
+        nav.classList.add('nav-active');
+    } else {
+        nav.classList.remove('nav-active');
+    }
+});
 
 /* ===========================================================
     Make random background
@@ -42,10 +56,24 @@ let heroImg = document.querySelector('.hero');
 let arrImgs = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
 let currentImgIndex = 0;
 
+// Preload all images
+function preloadImages() {
+    arrImgs.forEach(img => {
+        const image = new Image();
+        image.src = `img/bg/${img}`;
+    });
+}
+
+// Call the preload function
+preloadImages();
+
 setInterval(function() {
     heroImg.style.backgroundImage = `linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 60%)), url(img/bg/${arrImgs[currentImgIndex]})`;
-    currentImgIndex = (currentImgIndex + 1) % arrImgs.length; // Move to the next image, loop back to the start
+    currentImgIndex = (currentImgIndex + 1) % arrImgs.length;
 }, 4000);
+
+
+
 
 /* ===========================================================
     Open And Close Video Popup Menu

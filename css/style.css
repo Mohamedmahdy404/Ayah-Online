@@ -184,6 +184,10 @@ nav
     border-bottom: 1px solid #28a745;
     transition: var(--transition-time) ease-in-out;
     z-index: 999;
+
+    transition: background-color var(--transition-time) ease-in-out, 
+    box-shadow var(--transition-time) ease-in-out,
+    border-bottom var(--transition-time) ease-in-out;
 }
 
 .nav .row {
@@ -276,6 +280,14 @@ nav
     transition: var(--transition-time) ease-in-out;
     border-bottom: none;
 }
+
+.nav-active {
+    background-color: var(--white) !important;
+    box-shadow: 0 0 5px 0 #aaa;
+    border-bottom: none !important;
+}
+
+
 
 
 /* hero */
