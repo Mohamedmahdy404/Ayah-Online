@@ -37,8 +37,13 @@ toggleBtn.onclick = function() {
     navLinks.classList.toggle("collapse");
 }
 
-
-
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove("collapse");
+        toggleIcon.classList.add("fa-bars");
+        toggleIcon.classList.remove("fa-times");
+    });
+});
 
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
