@@ -31,17 +31,6 @@ https://ayah-online.vercel.app/
 
 ---
 
-## 📂 Project Structure
-Ayah-Online/
-├── assets/
-│ ├── css/
-│ ├── images/
-│ └── js/
-├── index.html
-└── README.md
-
----
-
 ## 📬 Contact
 
 Developed by [Mohamed Yasser Mahdy](https://www.linkedin.com/in/mohamedmahdy9)  
